@@ -46,9 +46,9 @@ main(List<String> args) async {
 }
 
 void serverMain(int id) {
+  // Start shared!!!
   var app = new Angel.custom(startShared);
-  app.lazyParseBodies = true;
-  app.injectSerializer(JSON.encode);
+  
   app.get('/json', () => {'hello': 'world'});
 
   app.get('/db', () async {
